@@ -8,8 +8,8 @@ const mailConfig = {
     secure: false,
     // requireTLS: true,
     auth: {
-        user: 'info.covidtest4u@gmail.com',
-        pass: 'QdyCz39_U'
+        user: 'info@testzentrum-24.de',
+        pass: 'Start100$'
     }
 };
 

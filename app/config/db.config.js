@@ -1,8 +1,8 @@
 module.exports = {
-	HOST: "92.205.26.238",
-	USER: "covidtest",
-	PASSWORD: "Covidtest!@#123",
-	DB: "CovidtestDB",
+	HOST: "92.205.17.75",
+	USER: "testzentrum",
+	PASSWORD: "Start200!",
+	DB: "testzentrum",
 	dialect: "mysql",
 	pool: {
 		max: 5,
