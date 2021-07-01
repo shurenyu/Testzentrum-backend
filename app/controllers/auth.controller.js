@@ -25,6 +25,34 @@ const generateToken = async (user) => {
     );
 }
 
+exports.adminSignUp = async (req, res) => {
+    const adminID = req.body.adminID;
+    const password = req.body.password;
+
+    try {
+
+        const newUser = {
+            adminID: adminID,
+        };
+
+        bcrypt.genSalt(10, (err, salt) => {
+            bcrypt.hash(req.body.password, salt, (err, hash) => {
+                if (err) throw err;
+                newUser.password = hash;
+
+                Admin.create(newUser)
+                    .then(async user => {
+                        return res.status(200).json({result: user});
+                    })
+                    .catch(err => {
+                        return res.status(500).json({error: err.toString(), msg: "SERVER_ERROR"});
+                    });
+            });
+        });
+    } catch (err) {
+        return res.status(500).json({error: err.toString(), msg: "SERVER_ERROR"});
+    }
+}
 
 /**
  * Admin Login

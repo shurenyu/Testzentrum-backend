@@ -15,6 +15,11 @@ module.exports = function (app) {
     );
 
     app.all(
+        "/auth/admin/sign-up",
+        controller.adminSignUp
+    );
+
+    app.all(
         "/auth/admin/register",
         controller.registerAdmin
     );

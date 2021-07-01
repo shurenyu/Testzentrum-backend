@@ -8,7 +8,7 @@ const mailConfig = {
     secure: false,
     // requireTLS: true,
     auth: {
-        user: 'info@testzentrum-24.de',
+        user: 'info.testzentrum24@gmail.com',
         pass: 'Start100$'
     }
 };
