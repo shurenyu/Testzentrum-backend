@@ -1,7 +1,5 @@
 module.exports = {
-	TCP_SERVER_IP: '211.110.1.103',
-	TCP_SERVER_PORT: 5000,
-	SECRET_KEY: "powerbox-secret-key",
+	SECRET_KEY: "testzentrum-secret-key",
 	PENDING_EXPIRATION: 600000,
 	// GOOGLE_API_KEY: "AIzaSyDDu0SXRJ7mFAl0pVR2PXOm585uiMQcyrg",
 };
