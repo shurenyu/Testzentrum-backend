@@ -240,7 +240,7 @@ exports.completeApplication = async (req, res) => {
         doc.image('./public/files/berlin-logo.png', 60, 30, {width: 120, align: 'right'});
         doc
             .fontSize(10)
-            .text('Maktub Berlin UG, Blissestraße 48, 10713 Berlin', 60, 60)
+            .text('CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin', 60, 60)
             .text(`${germanTimeFormat(application.updatedDate)}`, 60, 60, {align: "right"})
             .text(`Bescheinigung über das Vorliegen eines positiven oder negativen Antigentests zum Nachweis des SARS-CoV-2 Virus`, 60, 90)
             .text(`Name / Name : `, 60, 120).text(`${application.firstName} ${application.lastName}`, 200, 120)
@@ -248,8 +248,8 @@ exports.completeApplication = async (req, res) => {
             .text(`Geburtsdatum / Date of Birth: `, 60, 160).text(`${germanDateFormat(application.birthDay)}`, 200, 160)
             .text(`Testort / Test Location: `, 60, 180).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180)
             .text(`Test-/Probentyp / Test Type: `, 60, 200).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200)
-            .text(`Hersteller: `, 60, 220).text(`Safecare Bio-Tech (Hangzhou) Co., Ltd `, 200, 220)
-            .text(`Testname: `, 60, 240).text(` SAFECARE COVID-19 Ag Rapid test kit `, 200, 240)
+            .text(`Hersteller: `, 60, 220).text(`Bejing Hotgen Biotech Co., Ltd `, 200, 220)
+            .text(`Testname: `, 60, 240).text(` Coronavirus 2019-nCoV Antigen Test `, 200, 240)
             .text(`Bestellnummer / Order No: `, 60, 260).text(`${application.id}`, 200, 260)
             .text(`Testzeitpunkt / Date of Test: `, 60, 280).text(`${germanDateFormat(application.updatedDate)}`, 200, 280)
             .text(`Test durchgeführt durch: `, 60, 300).text(`${adminName}`, 200, 300)

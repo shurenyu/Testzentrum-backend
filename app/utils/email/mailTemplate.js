@@ -104,7 +104,7 @@ module.exports = (application, adminName) => {
 <body style="font-family: Poppins, sans-serif; background-color: #e8e5ea;">
 <div class="mail-container">
     <div class='mail-header'>
-        <p>Maktub Berlin UG, Blissestraße 48, 10713 Berlin</p>
+        <p>CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin</p>
         <p>${germanTimeFormat(application.updatedDate)}</p>
     </div>
     <div class='paragraph'>
@@ -134,11 +134,11 @@ module.exports = (application, adminName) => {
     </div>
     <div class='form-line'>
         <p>Hersteller: </p>
-        <p>Safecare Bio-Tech (Hangzhou) Co., Ltd </p>
+        <p>Bejing Hotgen Biotech Co., Ltd </p>
     </div>
     <div class='form-line'>
         <p>Testname: </p>
-        <p>SAFECARE COVID-19 Ag Rapid test kit </p>
+        <p>Coronavirus 2019-nCoV Antigen Test </p>
     </div>
     <div class='form-line'>
         <p>Bestellnummer / Order No: </p>
@@ -150,7 +150,7 @@ module.exports = (application, adminName) => {
     </div>
     <div class='form-line'>
         <p>Test durchgeführt durch: </p>
-        <p>${adminName}</p>
+        <p>Ümit Cakir</p>
     </div>
     
     <div class='paragraph'>
