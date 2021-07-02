@@ -238,42 +238,42 @@ exports.completeApplication = async (req, res) => {
         doc.pipe(fs.createWriteStream(`./public/files/${fileName}`));
 
         doc.image('./public/files/berlin-logo.png', 60, 30, {width: 120, align: 'right'});
-        doc.image('./public/files/CT24-Logo-2.png', 200, 0, {width: 60, align: 'right'});
+        doc.image('./public/files/CT24-Logo-2.png', 200, 20, {width: 60, align: 'right'});
         const delta = 30;
         doc
             .fontSize(10)
-            .text('CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin', 60, 60)
-            .text(`${germanTimeFormat(application.updatedDate)}`, 60, 60, {align: "right"})
-            .text(`Bescheinigung über das Vorliegen eines positiven oder negativen Antigentests zum Nachweis des SARS-CoV-2 Virus`, 60, 90)
-            .text(`Name / Name : `, 60, 120).text(`${application.firstName} ${application.lastName}`, 200, 120)
-            .text(`Geschlecht / Gender: `, 60, 140).text(`${gender}`, 200, 140)
-            .text(`Geburtsdatum / Date of Birth: `, 60, 160).text(`${germanDateFormat(application.birthDay)}`, 200, 160)
-            .text(`Testort / Test Location: `, 60, 180).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180)
-            .text(`Test-/Probentyp / Test Type: `, 60, 200).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200)
-            .text(`Hersteller: `, 60, 220).text(`Bejing Hotgen Biotech Co., Ltd `, 200, 220)
-            .text(`Testname: `, 60, 240).text(` Coronavirus 2019-nCoV Antigen Test `, 200, 240)
-            .text(`Bestellnummer / Order No: `, 60, 260).text(`${application.id}`, 200, 260)
-            .text(`Testzeitpunkt / Date of Test: `, 60, 280).text(`${germanDateFormat(application.updatedDate)}`, 200, 280)
-            .text(`Test durchgeführt durch: `, 60, 300).text(`${adminName}`, 200, 300)
-            .text(`Testergebnis / Test Result: `, 60, 320)
-            .fillColor(`${resultColor}`).text(`${result}`, 60, 355, {align: 'center'})
-            .fillColor('#000000').text(`SARS-CoV-2 Antigen Test (Lateral Flow Method)`, 60, 390)
-            .text(`Wer dieses Dokument fälscht oder einen nicht erfolgten Test unrichtig bescheinigt, macht sich nach § 267 StGB der Urkundenfälschung strafbar. Jeder festgestellte Verstoß wird zur Anzeige gebracht. Wer ein gefälschtes Dokument verwendet, um Zugang zu einer Einrichtung oder einem Angebot zu erhalten, begeht nach der Coronaschutzverordnung des Landes eine Ordnungswidrigkeit, die mit einer Geldbuße in Höhe von 1000€ geahndet wird. `, 60, 410)
+            .text('CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin', 60, 60 + delta)
+            .text(`${germanTimeFormat(application.updatedDate)}`, 60, 60 + delta, {align: "right"})
+            .text(`Bescheinigung über das Vorliegen eines positiven oder negativen Antigentests zum Nachweis des SARS-CoV-2 Virus`, 60, 90 + delta)
+            .text(`Name / Name : `, 60, 120 + delta).text(`${application.firstName} ${application.lastName}`, 200, 120 + delta)
+            .text(`Geschlecht / Gender: `, 60, 140 + delta).text(`${gender}`, 200, 140 + delta)
+            .text(`Geburtsdatum / Date of Birth: `, 60, 160 + delta).text(`${germanDateFormat(application.birthDay)}`, 200, 160 + delta)
+            .text(`Testort / Test Location: `, 60, 180 + delta).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180 + delta)
+            .text(`Test-/Probentyp / Test Type: `, 60, 200 + delta).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200 + delta)
+            .text(`Hersteller: `, 60, 220 + delta).text(`Bejing Hotgen Biotech Co., Ltd `, 200, 220 + delta)
+            .text(`Testname: `, 60, 240 + delta).text(` Coronavirus 2019-nCoV Antigen Test `, 200, 240 + delta)
+            .text(`Bestellnummer / Order No: `, 60, 260 + delta).text(`${application.id}`, 200, 260 + delta)
+            .text(`Testzeitpunkt / Date of Test: `, 60, 280 + delta).text(`${germanDateFormat(application.updatedDate)}`, 200, 280 + delta)
+            .text(`Test durchgeführt durch: `, 60, 300 + delta).text(`${adminName}`, 200, 300 + delta)
+            .text(`Testergebnis / Test Result: `, 60, 320 + delta)
+            .fillColor(`${resultColor}`).text(`${result}`, 60, 355 + delta, {align: 'center'})
+            .fillColor('#000000').text(`SARS-CoV-2 Antigen Test (Lateral Flow Method)`, 60, 390 + delta)
+            .text(`Wer dieses Dokument fälscht oder einen nicht erfolgten Test unrichtig bescheinigt, macht sich nach § 267 StGB der Urkundenfälschung strafbar. Jeder festgestellte Verstoß wird zur Anzeige gebracht. Wer ein gefälschtes Dokument verwendet, um Zugang zu einer Einrichtung oder einem Angebot zu erhalten, begeht nach der Coronaschutzverordnung des Landes eine Ordnungswidrigkeit, die mit einer Geldbuße in Höhe von 1000€ geahndet wird. `, 60, 410 + delta)
             .text(`----------------------------------------------------------------------------------------------`)
             .text(`*Bei einem positiven Ergebnis muss sich die Personen unmittelbar in Quarantäne begeben. Dies gilt auch für Haushaltsangehörige von Personen mit einem positiven Schnelltest. Die Quarantäne darf erst beendet werden, wenn ein nachfolgender PCR-Test ein negatives Ergebnis hat. Die positiv getestete Person hat zur Bestätigung oder auch Widerlegung Anspruch auf einen PCR-Test.`)
             .text(`EMPFEHLUNG: Um das Risiko einer Infektion so gering wie möglich zu halten, empfehlen wir Ihnen sich weiterhin an die Vorgaben der Bundeszentrale für gesundheitliche Aufklärung (BZgA): https://www.infektionsschutz.de/ zu halten.`)
             .text(`RECOMMENDATIONs: In order to keep the risk of infection as low as possible, we recommend that you continue to follow the requirements of the Federal Center for Health Education(BZgA): https://www.infektionsschutz.de/. `)
-            .text(`${application.testCenter && application.testCenter.name}`, 60, 610)
+            .text(`${application.testCenter && application.testCenter.name}`, 60, 610 + delta)
             .text(`${application.testCenter && application.testCenter.address}`)
             .text(`${adminName}`);
 
         doc
             .save()
-            .moveTo(60, 340)
-            .lineTo(550, 340)
-            .lineTo(550, 380)
-            .lineTo(60, 380)
-            .lineTo(60, 340)
+            .moveTo(60, 340 + delta)
+            .lineTo(550, 340 + delta)
+            .lineTo(550, 380 + delta)
+            .lineTo(60, 380 + delta)
+            .lineTo(60, 340 + delta)
             .stroke(`${resultColor}`)
 
         doc.end();
