@@ -238,6 +238,7 @@ exports.completeApplication = async (req, res) => {
         doc.pipe(fs.createWriteStream(`./public/files/${fileName}`));
 
         doc.image('./public/files/berlin-logo.png', 60, 30, {width: 120, align: 'right'});
+        doc.image('./public/files/CT24-Logo-2.svg', 200, 30, {width: 120, align: 'right'});
         doc
             .fontSize(10)
             .text('CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin', 60, 60)
