@@ -238,7 +238,7 @@ exports.completeApplication = async (req, res) => {
         doc.pipe(fs.createWriteStream(`./public/files/${fileName}`));
 
         doc.image('./public/files/berlin-logo.png', 60, 30, {width: 120, align: 'right'});
-        doc.image('./public/files/CT24-Logo-2.png', 200, 30, {width: 60, align: 'right'});
+        doc.image('./public/files/CT24-Logo-2.png', 200, 0, {width: 60, align: 'right'});
         const delta = 30;
         doc
             .fontSize(10)
