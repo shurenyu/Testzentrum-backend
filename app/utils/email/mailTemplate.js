@@ -6,11 +6,15 @@
 
 const {germanTimeFormat, germanDateFormat} = require('../../utils');
 module.exports = (application, adminName) => {
+    console.log('adminName: ', adminName)
 
     const result = application.status === 2 ? 'Positiv / Positive' : 'Negativ / Negative';
     const resultClass = application.status === 2 ? 'positive-box' : 'negative-box';
     const gender = application.gender === 'male' ? 'Männlich / male' : application.gender === 'female' ? 'Weiblich / female' : 'Divers / diverse';
 
+    console.log('result: ', result)
+    console.log('****: ', application.testCenter.name)
+    console.log('****: ', application.testCenter.address)
     return `
 <style>
     @import url('https://fonts.googleapis.com/css?family=Poppins:400,600,700,800');
@@ -166,8 +170,10 @@ module.exports = (application, adminName) => {
         </div>
         <p>----------------------------------------------------------------------------------------------</p>
         <p>*Bei einem positiven Ergebnis muss sich die Personen unmittelbar in Quarantäne begeben. Dies gilt auch für Haushaltsangehörige von Personen mit einem positiven Schnelltest. Die Quarantäne darf erst beendet werden, wenn ein nachfolgender PCR-Test ein negatives Ergebnis hat. Die positiv getestete Person hat zur Bestätigung oder auch Widerlegung Anspruch auf einen PCR-Test.</p>
-        <p><span class='font-bold'>EMPFEHLUNG:</span> Um das Risiko einer Infektion so gering wie möglich zu halten, empfehlen wir Ihnen sich weiterhin an die Vorgaben der Bundeszentrale für gesundheitliche Aufklärung (BZgA): https://www.infektionsschutz.de/ zu halten.</p>
-        <p><span class='font-bold'>RECOMMENDATIONs:</span> In order to keep the risk of infection as low as possible, we recommend that you continue to follow the requirements of the Federal Center for Health Education(BZgA): https://www.infektionsschutz.de/. </p>
+        <p><span class='font-bold'>EMPFEHLUNG:</span> Um das Risiko einer Infektion so gering wie möglich zu halten, empfehlen wir Ihnen sich weiterhin an die Vorgaben der Bundeszentrale für gesundheitliche Aufklärung (BZgA): </p>
+        
+        <p><span class='font-bold'>RECOMMENDATIONs:</span> In order to keep the risk of infection as low as possible, we recommend that you continue to follow the requirements of the Federal Center for Health Education(BZgA): </p>
+        
         <div class='paragraph'>
             <p class='font-bold'>${application.testCenter && application.testCenter.name}</p>
             <p>${application.testCenter && application.testCenter.address}</p>

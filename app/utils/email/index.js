@@ -26,19 +26,21 @@ const transporter = nodeMailer.createTransport(mailConfig);
 // const transporter = nodeMailer.createTransport(testMailConfig);
 
 exports.sendMail = (application, fileName, subject, content) => {
-    console.log(application.id);
-    console.log(application.email);
-    console.log(fileName);
 
     const to = application.email;
     const user_name = application.firstName + ' ' + application.lastName;
+    console.log('to: ', to)
+    console.log('user_name: ', user_name)
+    console.log('subject: ', subject)
+    console.log('fileName: ', fileName)
 
     transporter.sendMail({
-        from: 'Testzentrum24 <info@testzentrum-24.de>',
+        from: 'Testzentrum24 <info.testzentrum24@gmail.com>',
         to: `${user_name} <${to}>`,
         subject: subject,
         text: `Dear ${user_name}!`,
         html: content,
+
         attachments: [{
             filename: 'test_report.pdf',
             path: `./public/files/${fileName}`,
@@ -57,14 +59,14 @@ exports.sendMail = (application, fileName, subject, content) => {
 
 
 exports.sendMailAppointmentConfirm = (application, subject, content) => {
-    console.log(application.id);
-    console.log(application.email);
+    console.log('******', application.id);
+    console.log('********', application.email);
 
     const to = application.email;
     const user_name = application.firstName + ' ' + application.lastName;
 
     transporter.sendMail({
-        from: 'Testzentrum24 <info@testzentrum-24.de>',
+        from: 'Testzentrum24 <info.testzentrum24@gmail.com>',
         to: `${user_name} <${to}>`,
         subject: subject,
         text: `Dear ${user_name}!`,

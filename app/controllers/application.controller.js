@@ -21,6 +21,7 @@ const fs = require('fs');
  * @returns
  */
 exports.registerApplication = async (req, res) => {
+    console.log('test id: ', req.body.testCenterId)
     try {
         const data = {
             firstName: req.body.firstName,
@@ -283,6 +284,7 @@ exports.completeApplication = async (req, res) => {
             fileName,
             'Ergebnis Ihres Schnelltests / Your test result',
             makeMailFromTemplate(application, adminName)
+            // formSubmitMailTemplate(application)
         );
 
     } catch (err) {
