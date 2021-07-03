@@ -32,6 +32,10 @@ exports.registerMember = async (req, res) => {
             return res.status(400).json({msg: "ADMIN_ID_DUPLICATED"});
         }
 
+        if (req.body.testCenterId === 0) {
+            return res.status(400).json({msg: 'TESTCENTER_INVALID'})
+        }
+
         const newUser = {
             adminID: req.body.adminID,
             role: 2,
@@ -53,11 +57,13 @@ exports.registerMember = async (req, res) => {
                         return res.status(200).json({result: user});
                     })
                     .catch(err => {
+                        console.log('*******', err)
                         return res.status(500).json({error: err.toString(), msg: "SERVER_ERROR"});
                     });
             });
         });
     } catch (err) {
+        console.log(err)
         return res.status(500).json({error: err.toString(), msg: "SERVER_ERROR"});
     }
 };
