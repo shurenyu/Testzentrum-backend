@@ -150,7 +150,7 @@ module.exports = (application, adminName) => {
     </div>
     <div class='form-line'>
         <p>Test durchgeführt durch: </p>
-        <p>Ümit Cakir</p>
+        <p>${adminName || 'Ümit Cakir'}</p>
     </div>
     
     <div class='paragraph'>
@@ -171,7 +171,7 @@ module.exports = (application, adminName) => {
         <div class='paragraph'>
             <p class='font-bold'>${application.testCenter && application.testCenter.name}</p>
             <p>${application.testCenter && application.testCenter.address}</p>
-            <p>${adminName}</p>
+            <p>${adminName || 'Ümit Cakir'}</p>
         </div>
     </div>
     

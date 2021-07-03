@@ -211,7 +211,7 @@ exports.updateApplication = async (req, res) => {
 
 exports.completeApplication = async (req, res) => {
     const applicationId = req.body.applicationId || 0;
-    const adminName = req.body.adminName || '';
+    const adminName = req.body.adminName || 'Ümit Cakir';
     const adminId = req.body.adminId || 0;
 
     try {
