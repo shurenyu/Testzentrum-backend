@@ -240,15 +240,17 @@ exports.completeApplication = async (req, res) => {
 
         doc.image('./public/files/berlin-logo.png', 60, 30, {width: 120, align: 'right'});
         doc.image('./public/files/CT24-Logo-2.png', 200, 20, {width: 60, align: 'right'});
-        const delta = 30;
+        const delta0 = 30;
+        const delta = 50;
         doc
             .fontSize(10)
-            .text('CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin', 60, 60 + delta)
-            .text(`${germanTimeFormat(application.updatedDate)}`, 60, 60 + delta, {align: "right"})
-            .text(`Bescheinigung über das Vorliegen eines positiven oder negativen Antigentests zum Nachweis des SARS-CoV-2 Virus`, 60, 90 + delta)
-            .text(`Name / Name : `, 60, 120 + delta).text(`${application.firstName} ${application.lastName}`, 200, 120 + delta)
-            .text(`Geschlecht / Gender: `, 60, 140 + delta).text(`${gender}`, 200, 140 + delta)
-            .text(`Geburtsdatum / Date of Birth: `, 60, 160 + delta).text(`${germanDateFormat(application.birthDay)}`, 200, 160 + delta)
+            .text('CoronaTestZentrum24, Prenzlauer Allee 178, 10409 Berlin', 60, 60 + delta0)
+            .text(`${germanTimeFormat(application.updatedDate)}`, 60, 60 + delta0, {align: "right"})
+            .text(`Bescheinigung über das Vorliegen eines positiven oder negativen Antigentests zum Nachweis des SARS-CoV-2 Virus`, 60, 90 + delta0)
+            .text(`Name / Name : `, 60, 120 + delta0).text(`${application.firstName} ${application.lastName}`, 200, 120 + delta0)
+            .text(`Geschlecht / Gender: `, 60, 140 + delta0).text(`${gender}`, 200, 140 + delta0)
+            .text(`Geburtsdatum / Date of Birth: `, 60, 160 + delta0).text(`${germanDateFormat(application.birthDay)}`, 200, 160 + delta0)
+            .text(`Anschrift: `, 60, 180 + delta0).text(`${application.address}`, 200, 180 + delta0)
             .text(`Testort / Test Location: `, 60, 180 + delta).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180 + delta)
             .text(`Test-/Probentyp / Test Type: `, 60, 200 + delta).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200 + delta)
             .text(`Hersteller: `, 60, 220 + delta).text(`Bejing Hotgen Biotech Co., Ltd `, 200, 220 + delta)
