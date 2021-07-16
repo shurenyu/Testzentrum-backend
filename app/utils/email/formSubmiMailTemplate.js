@@ -80,19 +80,19 @@ module.exports = (info) => {
             <p>Im Folgenden finden Sie eine Übersicht zu Ihrem Termin.</p>
         </div>
         <div class="paragraph">
-            <p>Buchungsnummer : ${info.id}</p>
-            <p>Vorname: ${info.firstName}</p>
-            <p>Nachname: ${info.lastName}</p>
-            <p>Email: ${info.email}</p>
-            <p>Telefonnummer: ${info.phoneNumber}</p>
-            <p>Geschlecht: ${info.gender}</p>
-            <p>Anschrift: ${info.address}</p>
-            <p>PLZ: ${info.zipcode}</p>
-            <p>Stadt: ${info.street}</p>
-            <p>Geburtsdatum: ${germanDateFormat(info.birthDay)}</p>
-            <p>Testort: ${info.testCenterAddress}</p>
-            <p>Datum: ${germanDateFormat(info.bookingDate)}</p>
-            <p>Uhrzeit: ${info.bookingTime}</p>
+            <p>Buchungsnummer / Booking Number: ${info.id}</p>
+            <p>Vorname / Surname: ${info.firstName}</p>
+            <p>Nachname / Family Name: ${info.lastName}</p>
+            <p>E-Mail / E-Mail: ${info.email}</p>
+            <p>Telefonnummer / Phone Number: ${info.phoneNumber}</p>
+            <p>Geschlecht / Gender: ${info.gender}</p>
+            <p>Anschrift / Address: ${info.address}</p>
+            <p>PLZ / Zip Code: ${info.zipcode}</p>
+            <p>Stadt / City: ${info.street}</p>
+            <p>Geburtsdatum / Date of Birth: ${germanDateFormat(info.birthDay)}</p>
+            <p>Testort / Test Location ${info.testCenterAddress}</p>
+            <p>Datum / Date: ${germanDateFormat(info.bookingDate)}</p>
+            <p>Uhrzeit / Time: ${info.bookingTime}</p>
         </div>
         <div class="paragraph">
             <p>Bitte bringen Sie zum Test ein offizielles Ausweisdokument mit Lichtbild (Personalausweis oder Reisepass) mit.</p>
