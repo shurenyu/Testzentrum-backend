@@ -154,7 +154,7 @@ module.exports = (application, adminName) => {
         <p>${application.id}</p>
     </div>
     <div class='form-line'>
-        <p>Testzeitpunkt / Date of Test: </p>
+        <p>Testzeitpunkt / Test time: </p>
         <p>${germanDateFormat(application.updatedDate)}</p>
     </div>
     <div class='form-line'>
