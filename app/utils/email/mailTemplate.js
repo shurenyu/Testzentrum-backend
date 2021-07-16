@@ -103,6 +103,10 @@ module.exports = (application, adminName) => {
     p {
         font-size: 12px;
     }
+    .stamp {
+        width: 150px;
+        height: 100px;
+    }
 
 </style>
 <body style="font-family: Poppins, sans-serif; background-color: #e8e5ea;">
@@ -185,7 +189,9 @@ module.exports = (application, adminName) => {
             <p>${adminName || 'Ümit Cakir'}</p>
         </div>
     </div>
-    
+    <div>
+        <img src="../../../public/files/stamp3.jpg" alt="" class="stamp">
+    </div>
 </div>
 </body>
 	`;
