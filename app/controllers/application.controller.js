@@ -237,6 +237,7 @@ exports.completeApplication = async (req, res) => {
         const resultColor = application.status === 2 ? '#fe4e60' : '#1e7e34';
         const gender = application.gender === 'male' ? 'Männlich / male' : application.gender === 'female' ? 'Weiblich / female' : 'Divers / diverse';
 
+
         const doc = new PDFDocument();
         const fileName = `${adminId}_${new Date().getTime()}.pdf`;
         doc.pipe(fs.createWriteStream(`./public/files/${fileName}`));
@@ -253,14 +254,14 @@ exports.completeApplication = async (req, res) => {
             .text(`Name / Name : `, 60, 120 + delta0).text(`${application.firstName} ${application.lastName}`, 200, 120 + delta0)
             .text(`Geschlecht / Gender: `, 60, 140 + delta0).text(`${gender}`, 200, 140 + delta0)
             .text(`Geburtsdatum / Date of Birth: `, 60, 160 + delta0).text(`${germanDateFormat(application.birthDay)}`, 200, 160 + delta0)
-            .text(`Anschrift: `, 60, 180 + delta0).text(`${application.address}, ${application.zipcode} ${application.street}`, 200, 180 + delta0)
+            .text(`Anschrift / Address: `, 60, 180 + delta0).text(`${application.address}, ${application.zipcode} ${application.street}`, 200, 180 + delta0)
             .text(`Testort / Test Location: `, 60, 180 + delta).text(`${application.testCenter && application.testCenter.name} ${application.testCenter && application.testCenter.address}`, 200, 180 + delta)
             .text(`Test-/Probentyp / Test Type: `, 60, 200 + delta).text(`SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab `, 200, 200 + delta)
-            .text(`Hersteller: `, 60, 220 + delta).text(`Bejing Hotgen Biotech Co., Ltd `, 200, 220 + delta)
-            .text(`Testname: `, 60, 240 + delta).text(` Coronavirus 2019-nCoV Antigen Test `, 200, 240 + delta)
+            .text(`Hersteller / Producer: `, 60, 220 + delta).text(`Bejing Hotgen Biotech Co., Ltd `, 200, 220 + delta)
+            .text(`Testname / Test name: `, 60, 240 + delta).text(` Coronavirus 2019-nCoV Antigen Test `, 200, 240 + delta)
             .text(`Bestellnummer / Order No: `, 60, 260 + delta).text(`${application.id}`, 200, 260 + delta)
             .text(`Testzeitpunkt / Test time: `, 60, 280 + delta).text(`${application.checkinDate ? germanTimeFormat(application.checkinDate) : ''}`, 200, 280 + delta)
-            .text(`Test durchgeführt durch: `, 60, 300 + delta).text(`${adminName}`, 200, 300 + delta)
+            .text(`Test durchgeführt durch / Test executed by: `, 60, 300 + delta).text(`${adminName}`, 300, 300 + delta)
             .text(`Testergebnis / Test Result: `, 60, 320 + delta)
             .fillColor(`${resultColor}`).text(`${result}`, 60, 355 + delta, {align: 'center'})
             .fillColor('#000000').text(`SARS-CoV-2 Antigen Test (Lateral Flow Method)`, 60, 390 + delta)
@@ -282,12 +283,14 @@ exports.completeApplication = async (req, res) => {
             .lineTo(60, 340 + delta)
             .stroke(`${resultColor}`)
 
+        doc.image('./public/files/stamp3.jpg', 300, 610 + delta, {width: 120, align: 'right'});
+
         doc.end();
 
         return sendMail(
             application,
             fileName,
-            `Ergebnis Ihres Schnelltests / Your test result - Test ID ${application.id}`,
+            `Ergebnis/Test result - ${application.firstName} ${application.lastName}, Test ID ${application.id}`,
             makeMailFromTemplate(application, adminName)
             // formSubmitMailTemplate(application)
         );

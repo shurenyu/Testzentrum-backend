@@ -129,7 +129,7 @@ module.exports = (application, adminName) => {
         <p>${germanDateFormat(application.birthDay)}</p>
     </div>
     <div class='form-line'>
-        <p>Anschrift: </p>
+        <p>Anschrift / Address: </p>
         <p>${application.address}, ${application.zipcode} ${application.street}</p>
     </div>
 
@@ -142,11 +142,11 @@ module.exports = (application, adminName) => {
         <p>SARS-CoV-2 Ag Test | oro-/nasopharyngeal(er) Abstrich / swab </p>
     </div>
     <div class='form-line'>
-        <p>Hersteller: </p>
+        <p>Hersteller / Producer: </p>
         <p>Bejing Hotgen Biotech Co., Ltd </p>
     </div>
     <div class='form-line'>
-        <p>Testname: </p>
+        <p>Testname / Test name: </p>
         <p>Coronavirus 2019-nCoV Antigen Test </p>
     </div>
     <div class='form-line'>
@@ -155,10 +155,10 @@ module.exports = (application, adminName) => {
     </div>
     <div class='form-line'>
         <p>Testzeitpunkt / Test time: </p>
-        <p>${germanDateFormat(application.updatedDate)}</p>
+        <p>${application.checkinDate ? germanTimeFormat(new Date(application.checkinDate)) : ''}</p>
     </div>
     <div class='form-line'>
-        <p>Test durchgeführt durch: </p>
+        <p>Test durchgeführt durch / Test executed by: </p>
         <p>${adminName || 'Ümit Cakir'}</p>
     </div>
     
