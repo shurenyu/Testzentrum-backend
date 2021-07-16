@@ -128,9 +128,9 @@ module.exports = (application, adminName) => {
         <p>Geburtsdatum / Date of Birth: </p>
         <p>${germanDateFormat(application.birthDay)}</p>
     </div>
-        <div class='form-line'>
+    <div class='form-line'>
         <p>Anschrift: </p>
-        <p>${application.address}</p>
+        <p>${application.address}, ${application.zipcode} ${application.street}</p>
     </div>
 
     <div class='form-line'>

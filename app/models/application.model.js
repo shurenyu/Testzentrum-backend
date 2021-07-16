@@ -54,6 +54,9 @@ module.exports = (sequelize, Sequelize) => {
             type: Sequelize.INTEGER(4),
             defaultValue: 1,
         },
+        checkinDate: {
+            type: Sequelize.DATE,
+        },
         updatedDate: {
             type: Sequelize.DATE,
             defaultValue: Sequelize.NOW
