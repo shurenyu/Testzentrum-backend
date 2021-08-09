@@ -147,11 +147,11 @@ module.exports = (application, adminName) => {
     </div>
     <div class='form-line'>
         <p>Hersteller / Producer: </p>
-        <p>Bejing Hotgen Biotech Co., Ltd </p>
+        <p>nal von minden GmbH</p>
     </div>
     <div class='form-line'>
         <p>Testname / Test name: </p>
-        <p>Coronavirus 2019-nCoV Antigen Test </p>
+        <p>Nadal Covid-19 Ag Test </p>
     </div>
     <div class='form-line'>
         <p>Bestellnummer / Order No: </p>
